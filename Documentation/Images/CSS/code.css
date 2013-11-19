@@ -1,0 +1,111 @@
+body {
+	font-family: Helvetica, Arial, sans-serif; font-size: 0.9em;
+}
+pre {
+	font-family: "Courier New", Courier, monospace; font-size: 0.8em;
+}
+pre {
+	margin: 10px; padding: 10px; border: 1px solid rgb(216, 216, 216);
+}
+pre {
+	-moz-border-radius: 10px; -webkit-border-radius: 10px;
+}
+pre {
+	background: rgb(248, 248, 248);
+}
+.selectLang {
+	text-align: right; margin-right: 10px; float: right;
+}
+.cSelect {
+	font-size: 12px;
+}
+.cSelect ul {
+	font-size: 12px;
+}
+.cSelect li {
+	font-size: 12px;
+}
+.cSelect {
+	margin-right: 20px; float: right; display: inline-block; position: relative;
+}
+.cSelect {
+	padding-top: 0.4em; padding-bottom: 0.2em;
+}
+.cSelect-Selected {
+	cursor: pointer;
+}
+.cSelect-ArrowDown {
+	cursor: pointer;
+}
+.cSelect li {
+	cursor: pointer;
+}
+.cSelect {
+	-webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px;
+}
+.roundTop {
+	-webkit-border-top-left-radius: 10px; -webkit-border-top-right-radius: 10px;
+}
+.cSelect {
+	-moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px;
+}
+.roundTop {
+	-moz-border-radius-topleft: 10px; -moz-border-radius-topright: 10px;
+}
+.roundBottom {
+	-webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px;
+}
+.cSelect ul {
+	-webkit-border-bottom-left-radius: 10px; -webkit-border-bottom-right-radius: 10px;
+}
+.roundBottom {
+	-moz-border-radius-bottomleft: 10px; -moz-border-radius-bottomright: 10px;
+}
+.cSelect ul {
+	-moz-border-radius-bottomleft: 10px; -moz-border-radius-bottomright: 10px;
+}
+.cSelectWidth {
+	width: 10em; display: block;
+}
+.cSelect-wrapper {
+	position: relative;
+}
+.cSelect ul {
+	background: rgb(255, 255, 255); margin: 0px; padding: 0px; display: inline-block;
+}
+.cSelect ul {
+	top: 1.3em; position: absolute; z-index: 10;
+}
+.cSelect ul {
+	padding: 0.5em 0px;
+}
+.cSelect li {
+	margin: 0px; padding: 0.1em; text-align: right; list-style-type: none;
+}
+.cSelect li {
+	padding-right: 24px; padding-left: 0.7em;
+}
+.cSelect-highlight {
+	background: rgb(240, 240, 240);
+}
+.cSelect-Selected {
+	width: 75%; text-align: right; margin-right: 0.5em; margin-left: 0.5em; float: right;
+}
+.cSelect-ArrowDown {
+	width: 18px; height: 18px; float: right; display: inline-block;
+}
+.cSelect-ArrowDown {
+	background: url("down-arrow.png"); text-align: center;
+}
+.cSelect-ArrowDown {
+	-moz-border-radius: 9px; -webkit-border-radius: 9px;
+}
+.monoCompatibility-roweven {
+	background-color: rgb(220, 221, 223);
+}
+.monoCompatibility-rowodd {
+	background-color: rgb(243, 243, 244);
+}
+.monoCompatibility-cell {
+	border: 1px solid rgb(255, 255, 255);
+}
