@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="../Images/favicon.ico" />
 	<link rel="icon" type="image/png" href="../Images/favicon.png" />
 	<!-- #TemplateBeginEditable name="doctitle" -->
-	<title>AccelerationEvent.deltaTime 增量时间</title>
+	<title>InitializeOnLoadAttribute 初始化加载属性</title>
 	<!-- #TemplateEndEditable -->
     <link rel="stylesheet" href="../Images/CSS/code.css" type="text/css">
     <link rel="stylesheet" href="../Images/CSS/unity.css" type="text/css">
@@ -35,7 +35,7 @@
 		setLanguage(langgory);
 		
 		category = getCategory();
-		if(!category){category = 0;}
+		if(!category){category = 5;}
 		document.getElementById("catMenu").selectedIndex = category;
 		setCategory(category);
 	});
@@ -766,21 +766,20 @@
           <li class="attrEditor" style="display: none;"><a href="PreferenceItem.html">PreferenceItem</a></li>
         </ul>
       </div>
-<div id="mainContainer"><span class="heading"><a href="AccelerationEvent.html">AccelerationEvent</a>.deltaTime 增量时间</span><br><div class="section">
+<div id="mainContainer"><span class="heading">InitializeOnLoadAttribute 初始化加载属性</span>Namespace: UnityEditor<br><div class="section">
           <div class="subsection">
             <div class="sigContainer">
-              <div class="sigBlockJS" style="display: none;"><span class="decText">
-var <span class="sigKW">deltaTime</span>: float;
-</span></div>
-              <div class="sigBlockCS" style="display: block;"><span class="decText">float <span class="sigKW">deltaTime</span>;
-</span></div>
-              <div class="sigBlockBoo" style="display: none;"><span class="decText"> <span class="sigKW">deltaTime</span> as float</span></div>
+              <div class="sigBlockJS" style="display: none;"><span class="decText"></span></div>
+              <div class="sigBlockCS" style="display: block;"><span class="decText"></span></div>
+              <div class="sigBlockBoo" style="display: none;"><span class="decText"></span></div>
             </div>
           </div>
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
-            <p class="first">Amount of time passed since last accelerometer measurement.</p><div class="ch">经过一段时间至最后的加速度测量。</div><br />
+            <p class="first">Allow an editor class to be initialized when Unity loads without action from the user.</p>
+			<div class="ch">当无用户操作而加载Unity时，允许初始化一个编辑器类。</div><br />
           </div>
+          <div class="subsection">See Also: <a href="../Manual/RunningEditorCodeOnLaunch.html.html">Running Editor Code on Launch</a>.<br />请参见: <a href="../Manual/RunningEditorCodeOnLaunch.html.html">Running Editor Code on Launch</a>。</div>
         </div>
       </div>
     </div>

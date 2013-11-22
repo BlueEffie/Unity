@@ -787,7 +787,7 @@ def
           </div>
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
-            <p class="first">Defines when the gizmo should be invoked for drawing.<br /><div class="ch">限定要绘制gizmo时被调用。</div></p>
+            <p class="first">Defines when the gizmo should be invoked for drawing.</p><div class="ch">限定要绘制gizmo时被调用。</div><br />
           </div>
           <div class="subsection">See Also: <a href="GizmoType.html">GizmoType</a>.<br />请参见: <a href="GizmoType.html">GizmoType</a>。</div>
           <div class="subsection">
@@ -802,6 +802,7 @@ def
 	    // Draw the light icon
 	    // 绘制灯光图标
 	    // (A bit above the one drawn by the builtin light gizmo renderer)
+            // (略高于内置灯光gizmo渲染器绘制的图标)
 	    <a href="Gizmos.DrawIcon.html">Gizmos.DrawIcon</a> (position + <a href="Vector3-up.html">Vector3.up</a>, "Light Gizmo.tiff");<p class="basic"></p>	    // Are we selected? Draw a solid sphere surrounding the light
             // 当选择时，围绕灯光绘制一个球形
 	    if ((gizmoType &amp; <a href="GizmoType.SelectedOrChild.html">GizmoType.SelectedOrChild</a>) != 0) {
@@ -839,7 +840,8 @@ def
 			<a href="Vector3.html">Vector3</a> position = light.transform.position;
 			// Draw the light icon
 			// 绘制灯光图标
-			// (A bit above the one drawn by the builtin light gizmo renderer)</span>
+			// (A bit above the one drawn by the builtin light gizmo renderer)
+			// (略高于内置灯光gizmo渲染器绘制的图标)
 			<a href="Gizmos.DrawIcon.html">Gizmos.DrawIcon</a> (position + <a href="Vector3-up.html">Vector3.up</a>, "Light Gizmo.tiff");<p class="basic"></p>	    	        // Are we selected? Draw a solid sphere surrounding the light
 			// 当选择时，围绕灯光绘制一个球形
 			if ((gizmoType &amp; <a href="GizmoType.SelectedOrChild.html">GizmoType.SelectedOrChild</a>) != 0) {
@@ -896,13 +898,10 @@ def
           </div>
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
-            <p class="first">Same as above. <code class="varname">drawnGizmoType</code> determines of what type the object we are drawing the gizmo of has to be.<br /><div class="ch">同上。drawnGizmoType确定了要绘制gizmo物体是什么类型。</div>
-
-</p>
+            <p class="first">Same as above. <code class="varname">drawnGizmoType</code> determines of what type the object we are drawing the gizmo of has to be.</p><div class="ch">同上。drawnGizmoType确定了要绘制gizmo物体是什么类型。</div><br />
           </div>
-          <div class="subsection">If drawnGizmoType is null, the type will be determined from the first parameter of the draw gizmo method.<br />如果drawnGizmoType类型为null，该类型将从绘制gizmo方法的首个参数来确定。
-
-</div>
+          <div class="subsection">If drawnGizmoType is null, the type will be determined from the first parameter of the draw gizmo method.<br /><div class="chs">如果drawnGizmoType类型为null，该类型将从绘制gizmo方法的首个参数来确定。</div>
+		</div>
         </div>
       </div>
   </body>

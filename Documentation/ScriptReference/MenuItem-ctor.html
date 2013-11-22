@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="../Images/favicon.ico" />
 	<link rel="icon" type="image/png" href="../Images/favicon.png" />
 	<!-- #TemplateBeginEditable name="doctitle" -->
-	<title>AccelerationEvent.deltaTime 增量时间</title>
+	<title>MenuItem.MenuItem 构造菜单项</title>
 	<!-- #TemplateEndEditable -->
     <link rel="stylesheet" href="../Images/CSS/code.css" type="text/css">
     <link rel="stylesheet" href="../Images/CSS/unity.css" type="text/css">
@@ -35,7 +35,7 @@
 		setLanguage(langgory);
 		
 		category = getCategory();
-		if(!category){category = 0;}
+		if(!category){category = 5;}
 		document.getElementById("catMenu").selectedIndex = category;
 		setCategory(category);
 	});
@@ -766,21 +766,71 @@
           <li class="attrEditor" style="display: none;"><a href="PreferenceItem.html">PreferenceItem</a></li>
         </ul>
       </div>
-<div id="mainContainer"><span class="heading"><a href="AccelerationEvent.html">AccelerationEvent</a>.deltaTime 增量时间</span><br><div class="section">
+<div id="mainContainer"><span class="heading"><a href="MenuItem.html">MenuItem</a>.MenuItem 构造菜单项</span><br><div class="section">
           <div class="subsection">
             <div class="sigContainer">
-              <div class="sigBlockJS" style="display: none;"><span class="decText">
-var <span class="sigKW">deltaTime</span>: float;
-</span></div>
-              <div class="sigBlockCS" style="display: block;"><span class="decText">float <span class="sigKW">deltaTime</span>;
-</span></div>
-              <div class="sigBlockBoo" style="display: none;"><span class="decText"> <span class="sigKW">deltaTime</span> as float</span></div>
+              <div class="sigBlockJS" style="display: none;"><span class="decText"><span class="sigKW">MenuItem</span>(<span class="sigKW">itemName</span>:
+string,
+<span class="sigKW">isValidateFunction</span>: 
+bool,
+<span class="sigKW">priority</span>: 
+int)</span></div>
+              <div class="sigBlockCS" style="display: block;"><span class="decText"><span class="sigKW">MenuItem</span>(string <span class="sigKW">itemName</span>,
+bool <span class="sigKW">isValidateFunction</span>,
+int <span class="sigKW">priority</span>);</span></div>
+              <div class="sigBlockBoo" style="display: none;"><span class="decText">
+def
+<span class="sigKW">MenuItem</span>(<span class="sigKW">itemName</span> as string,
+ <span class="sigKW">isValidateFunction</span> as bool,
+ <span class="sigKW">priority</span> as int)</span></div>
             </div>
           </div>
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
-            <p class="first">Amount of time passed since last accelerometer measurement.</p><div class="ch">经过一段时间至最后的加速度测量。</div><br />
+            <p class="first">Creates a menu item and invokes the static function following it, when the menu item is selected.</p><div class="ch">当菜单项被选中后创建一个菜单项，并调用静态函数。</div><br />
           </div>
+          <div class="subsection">The <code class="varname">itemName</code> is the menu item represented like a pathname. Eg. "GameObject/Do Something"
+If <code class="varname">isValidateFunction</code> is true, this is a validation function and will be called before invoking the menu function with the same name.
+<code class="varname">Priority</code> defines the order by which menu items are displayed in the menu bar.<br /><div class="chs"><code class="varname">itemName</code>是表示菜单项，就像路径名。例如，“GameObject/Do Something”。如果<code class="varname">isValidateFunction</code>为true，这是一个验证函数并且会在同名菜单函数调用之前调用。优先级决定了菜单项在菜单栏中显示的顺序。</div></div>
+        </div>
+        <div class="section">
+          <div class="subsection">
+            <div class="sigContainer">
+              <div class="sigBlockJS" style="display: none;"><span class="decText"><span class="sigKW">MenuItem</span>(<span class="sigKW">itemName</span>:
+string,
+<span class="sigKW">isValidateFunction</span>: 
+bool)</span></div>
+              <div class="sigBlockCS" style="display: block;"><span class="decText"><span class="sigKW">MenuItem</span>(string <span class="sigKW">itemName</span>,
+bool <span class="sigKW">isValidateFunction</span>);</span></div>
+              <div class="sigBlockBoo" style="display: none;"><span class="decText">
+def
+<span class="sigKW">MenuItem</span>(<span class="sigKW">itemName</span> as string,
+ <span class="sigKW">isValidateFunction</span> as bool)</span></div>
+            </div>
+          </div>
+          <div class="subsection">
+            <div class="script-section-softheading">Description 描述</div>
+            <p class="first">Creates a menu item and invokes the static function following it, when the menu item is selected.</p><div class="ch">当菜单项被选中后创建一个菜单项，并调用静态函数。</div><br />
+          </div>
+          <div class="subsection">The <code class="varname">itemName</code> is the menu item represented like a pathname. Eg. "GameObject/Do Something"
+If <code class="varname">isValidateFunction</code> is true, this is a validation function and will be called before invoking the menu function with the same name.<br /><div class="chs"><code class="varname">itemName</code>是表示菜单项，就像路径名。例如，“GameObject/Do Something”。如果<code class="varname">isValidateFunction</code>为true，这是一个验证函数并且会在同名菜单函数调用之前调用。</div></div>
+        </div>
+        <div class="section">
+          <div class="subsection">
+            <div class="sigContainer">
+              <div class="sigBlockJS" style="display: none;"><span class="decText"><span class="sigKW">MenuItem</span>(<span class="sigKW">itemName</span>:
+string)</span></div>
+              <div class="sigBlockCS" style="display: block;"><span class="decText"><span class="sigKW">MenuItem</span>(string <span class="sigKW">itemName</span>);</span></div>
+              <div class="sigBlockBoo" style="display: none;"><span class="decText">
+def
+<span class="sigKW">MenuItem</span>(<span class="sigKW">itemName</span> as string)</span></div>
+            </div>
+          </div>
+          <div class="subsection">
+            <div class="script-section-softheading">Description 描述</div>
+            <p class="first">Creates a menu item and invokes the static function following it, when the menu item is selected.</p><div class="ch">当菜单项被选中后创建一个菜单项，并调用静态函数。</div><br />
+          </div>
+          <div class="subsection">The <code class="varname">itemName</code> is the menu item represented like a pathname. Eg. "GameObject/Do Something".<br /><div class="chs"><code class="varname">itemName</code>是表示菜单项，就像路径名。例如，“GameObject/Do Something”。</div></div>
         </div>
       </div>
     </div>
