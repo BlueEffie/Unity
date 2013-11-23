@@ -2,7 +2,7 @@ body {
   min-width: 760px; background-color: #fff; margin: 15px 10px 10px 10px; overflow-y: scroll; -webkit-font-smoothing: antialiased;
 }
 body, p, ul, ol, td, li {
-  font-family: Helvetica, Arial, sans-serif; font-size: 12px;
+  font-family: Helvetica, Arial, SimSun, sans-serif; font-size: 12px;
 }
 body, p { color: #444; line-height: 17px;}
 
@@ -668,6 +668,10 @@ th { text-align:left; padding-right:20px;}
 input.sbox{
 	width:156px;
 	margin-bottom:10px;
+}
+
+select{
+	font-family: Helvetica, Arial, SimSun, sans-serif;
 }
 
 li select{

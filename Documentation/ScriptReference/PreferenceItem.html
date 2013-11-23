@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="../Images/favicon.ico" />
 	<link rel="icon" type="image/png" href="../Images/favicon.png" />
 	<!-- #TemplateBeginEditable name="doctitle" -->
-	<title>InitializeOnLoadAttribute 初始化加载属性</title>
+	<title>PreferenceItem 首选项</title>
 	<!-- #TemplateEndEditable -->
     <link rel="stylesheet" href="../Images/CSS/code.css" type="text/css">
     <link rel="stylesheet" href="../Images/CSS/unity.css" type="text/css">
@@ -766,7 +766,7 @@
           <li class="attrEditor" style="display: none;"><a href="PreferenceItem.html">PreferenceItem</a></li>
         </ul>
       </div>
-<div id="mainContainer"><span class="heading">InitializeOnLoadAttribute 初始化加载属性</span>Namespace: UnityEditor<br><div class="section">
+<div id="mainContainer"><span class="heading">PreferenceItem 首选项</span>Namespace: UnityEditor<br><div class="section">
           <div class="subsection">
             <div class="sigContainer">
               <div class="sigBlockJS" style="display: none;"><span class="decText"></span></div>
@@ -776,11 +776,89 @@
           </div>
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
-            <p class="first">Allow an editor class to be initialized when Unity loads without action from the user.</p>
-			<div class="ch">当无用户操作而加载Unity时，允许初始化一个编辑器类。</div><br />
+            <p class="first">The PreferenceItem attribute allows you to add preferences sections to the Preferences Window.</p>
+			<div class="ch">PreferenceItem属性允许你添加首选项部分的首选项窗口。</div><br />
           </div>
-          <div class="subsection">See Also: <a href="../Manual/RunningEditorCodeOnLaunch.html.html">Running Editor Code on Launch</a>.<br />请参见: <a href="../Manual/RunningEditorCodeOnLaunch.html.html">Running Editor Code on Launch</a>。</div>
+          <div class="subsection">The PreferenceItem attribute turns any static function into an OnGUI callback. Only static functions can use the PreferenceItem attribute.<br />
+		  <div class="chs">PreferenceItem属性使任何静态函数变为OnGUI回调。只有静态函数可以使用PreferenceItem属性。</div></div>
+          <div class="subsection">
+      <pre class="codeExampleRaw">public class OurPreferences {
+	// Have we loaded the prefs yet
+	// 我们是否还加载了首选项
+	private static var prefsLoaded : boolean = false;
+	
+	// The Preferences
+	// 首选项
+	public static var boolPreference : boolean = false;
+	
+	// Add preferences section named "My Preferences" to the Preferences Window
+	// 在首选项窗口中添加一个名为“My Preferences”的首选项部分
+	@PreferenceItem ("My Preferences")
+	static function PreferencesGUI () {
+		// Load the preferences
+		// 加载首选项
+		if (!prefsLoaded) {
+			boolPreference = <a href="EditorPrefs.GetBool.html">EditorPrefs.GetBool</a> ("BoolPreferenceKey", false);
+			prefsLoaded = true;
+		}
+		
+		// Preferences <a href="GUI.html">GUI</a>
+		// 首选项 <a href="GUI.html">GUI</a>
+		boolPreference = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a> ("Bool Preference", boolPreference);
+		
+		// Save the preferences
+		// 保存首选项
+		if (<a href="GUI-changed.html">GUI.changed</a>)
+			<a href="EditorPrefs.SetBool.html">EditorPrefs.SetBool</a> ("BoolPreferenceKey", boolPreference);
+	}
+}
+</pre>
+      <pre class="codeExampleRaw">
+// C# example:
+using UnityEditor;
+using UnityEngine;
+public class OurPreferences {
+	// Have we loaded the prefs yet
+	// 我们是否还加载了首选项
+	private static bool prefsLoaded = false;
+	
+	// The Preferences
+	// 首选项
+	public static bool boolPreference = false;
+	
+	// Add preferences section named "My Preferences" to the Preferences Window
+	// 在首选项窗口中添加一个名为“My Preferences”的首选项部分
+	[PreferenceItem ("My Preferences")]
+	static void PreferencesGUI () {
+		// Load the preferences
+		// 加载首选项
+		if (!prefsLoaded) {
+			boolPreference = <a href="EditorPrefs.GetBool.html">EditorPrefs.GetBool</a> ("BoolPreferenceKey", false);
+			prefsLoaded = true;
+		}
+		
+		// Preferences <a href="GUI.html">GUI</a>
+		// 首选项 <a href="GUI.html">GUI</a>
+		boolPreference = <a href="EditorGUILayout.Toggle.html">EditorGUILayout.Toggle</a> ("Bool Preference", boolPreference);
+		
+		// Save the preferences
+		// 保存首选项
+		if (<a href="GUI-changed.html">GUI.changed</a>)
+			<a href="EditorPrefs.SetBool.html">EditorPrefs.SetBool</a> ("BoolPreferenceKey", boolPreference);
+	}
+}
+</pre>
+    </div>
         </div>
+        <div class="script-section-softheading">Constructors 构造函数</div>
+        <table class="class-member-list">
+    <tbody><tr>
+            <th class="memberTableName"><a href="PreferenceItem-ctor.html">PreferenceItem</a></th>
+            <td>Creates a section in the Preferences Window called name and invokes the static function following it for the section's GUI.<br />
+			在首选项窗口中创建了一个调用名称的部分，并且为此部分的GUI调用了与之相随的静态函数。
+			</td>
+          </tr>
+  </tbody></table>
       </div>
     </div>
   </body>
