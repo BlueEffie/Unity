@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="../Images/favicon.ico" />
 	<link rel="icon" type="image/png" href="../Images/favicon.png" />
 	<!-- #TemplateBeginEditable name="doctitle" -->
-	<title>AnimationMode 动画模式</title>
+	<title>AnimationMode.BeginSampling 开始采样</title>
 	<!-- #TemplateEndEditable -->
     <link rel="stylesheet" href="../Images/CSS/code.css" type="text/css">
     <link rel="stylesheet" href="../Images/CSS/unity.css" type="text/css">
@@ -766,74 +766,25 @@
           <li class="attrEditor" style="display: none;"><a href="PreferenceItem.html">PreferenceItem</a></li>
         </ul>
       </div>
-<div id="mainContainer"><span class="heading">AnimationMode 动画模式</span>Namespace: UnityEditor<br><div class="section">
+<div id="mainContainer"><span class="heading"><a href="AnimationMode.html">AnimationMode</a>.BeginSampling 开始采样</span><br><div class="section">
           <div class="subsection">
             <div class="sigContainer">
-              <div class="sigBlockJS" style="display: none;"><span class="decText"></span></div>
-              <div class="sigBlockCS" style="display: block;"><span class="decText"></span></div>
-              <div class="sigBlockBoo" style="display: none;"><span class="decText"></span></div>
+              <div class="sigBlockJS" style="display: none;"><span class="decText">static
+function
+<span class="sigKW">BeginSampling</span>():
+void;</span></div>
+              <div class="sigBlockCS" style="display: block;"><span class="decText">static void <span class="sigKW">BeginSampling</span>();</span></div>
+              <div class="sigBlockBoo" style="display: none;"><span class="decText">static
+def
+<span class="sigKW">BeginSampling</span>()
+as void</span></div>
             </div>
           </div>
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
-            <p class="first">AnimationMode is used by the AnimationWindow to store properties modifed by the AnimationClip playback.</p>
-			<div class="ch">AnimationWindow(动画窗口)使用AnimationMode来存储由AnimationClip(动画剪辑)回放修改的属性。</div><br />
+            <p class="first"></p>
           </div>
-          <div class="subsection">When exiting AnimationMode all properties are reverted to their default state. Animated properties are also highlighted by the inspector. Use AnimationMode.StartAnimationMode to enter animation mode. In Animation mode the editor is tinted to show that it is animating. Properties can be animated via AnimationMode.SampleAnimationClip.<br /><div class="chs">当退出AnimationMode时所有的属性恢复为默认状态。在检视面板中动画属性被高亮显示。使用AnimationMode。StartAnimationMode(启动动画模式)进入动画模式。在动画模式下编辑器是有色的表示它是动画。通过AnimationMode可以设置动画属性。</div></div>
         </div>
-        <div class="script-section-softheading">Static Variables 静态变量</div>
-        <table class="class-member-list">
-    <tbody><tr>
-            <th class="memberTableName"><a href="AnimationMode-animatedPropertyColor.html">animatedPropertyColor</a></th>
-            <td>The color used to show that a property is currently being animated.<br />颜色用来显示当前的动画属性。</td>
-          </tr>
-  </tbody></table>
-        <div class="script-section-softheading">Constructors 构造函数</div>
-        <table class="class-member-list">
-    <tbody><tr>
-            <th class="memberTableName"><a href="AnimationMode-ctor.html">AnimationMode</a></th>
-            <td>
-            </td>
-          </tr>
-  </tbody></table>
-        <div class="script-section-softheading">Static Functions 静态函数</div>
-        <table class="class-member-list">
-    <tbody><tr>
-            <th class="memberTableName"><a href="AnimationMode.AddPropertyModification.html">AddPropertyModification</a></th>
-            <td>
-            </td>
-          </tr>
-    <tr>
-            <th class="memberTableName"><a href="AnimationMode.BeginSampling.html">BeginSampling</a></th>
-            <td>
-            </td>
-          </tr>
-    <tr>
-            <th class="memberTableName"><a href="AnimationMode.EndSampling.html">EndSampling</a></th>
-            <td>
-            </td>
-          </tr>
-    <tr>
-            <th class="memberTableName"><a href="AnimationMode.InAnimationMode.html">InAnimationMode</a></th>
-            <td>Are we currently in AnimationMode.<br />我们当前在AnimationMode中。</td>
-          </tr>
-    <tr>
-            <th class="memberTableName"><a href="AnimationMode.IsPropertyAnimated.html">IsPropertyAnimated</a></th>
-            <td>Is the specified property currently in animation mode and being animated?<br />是否是在当前动画模式中指定的动画属性？</td>
-          </tr>
-    <tr>
-            <th class="memberTableName"><a href="AnimationMode.SampleAnimationClip.html">SampleAnimationClip</a></th>
-            <td>Samples an AnimationClip on the object and also records any modified properties in AnimationMode.<br />在对象的AnimationClip(动画剪辑)上采样并记录AnimationMode下任何修改的属性。</td>
-          </tr>
-    <tr>
-            <th class="memberTableName"><a href="AnimationMode.StartAnimationMode.html">StartAnimationMode</a></th>
-            <td>Starts the animation mode.<br />启动动画模式。</td>
-          </tr>
-    <tr>
-            <th class="memberTableName"><a href="AnimationMode.StopAnimationMode.html">StopAnimationMode</a></th>
-            <td>Stops Animation mode, reverts all properties that were animated in animation mode.<br />停止动画模式，恢复所有在动画模式下的动画属性。</td>
-          </tr>
-  </tbody></table>
       </div>
     </div>
   </body>
