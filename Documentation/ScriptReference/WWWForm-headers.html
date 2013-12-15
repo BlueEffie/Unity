@@ -780,12 +780,12 @@ var <span class="sigKW">headers</span>: <a href="Hashtable.html">Hashtable</a>;
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
             <p class="first">(Read Only) Returns the correct request headers for posting the form using the <a href="WWW.html">WWW</a> class.</p>
-			<div class="ch">(只读)为使用<a href="WWW.html">WWW</a>传递的表单返回正确的请求头</div></br>
+			<div class="ch">(只读)为使用 <a href="WWW.html">WWW</a> 传递的表单返回正确的请求头。</div></br>
           </div>
           <div class="subsection">This field only contains one header, /"Content-Type"/,
 which is set to the correct mime type for the form: "<code class="mono">application/x-www-form-urlencoded</code>" for normal
-forms and "<code class="mono">multipart/form-data</code>" for forms containing data added using <a href="WWWForm.AddBinaryData.html">AddBinaryData</a>.</div>
-		  <div class="chs">这个域只包含一个header,/"Content-Type"/为表单设置正确的mine类型，"application/x-www-form-urlencoded"用于一般的表单，"multipart/form-data"用于使用<a href="WWWForm.AddBinaryData.html">AddBinaryData</a>来添加包含数据的表单</div>
+forms and "<code class="mono">multipart/form-data</code>" for forms containing data added using <a href="WWWForm.AddBinaryData.html">AddBinaryData</a>.
+		  <div class="chs">这个域只包含一个 header，/"Content-Type"/ 为表单设置正确的mine类型，"application/x-www-form-urlencoded" 用于一般的表单，"multipart/form-data" 用于使用 <a href="WWWForm.AddBinaryData.html">AddBinaryData</a> 来添加包含数据的表单。</div></div>
           <div class="subsection">
       <pre class="codeExampleJS" style="display: block;">var form = new <a href="WWWForm.html">WWWForm</a>();
 form.AddField("name","value");
@@ -793,14 +793,14 @@ var headers = form.headers;
 var rawData = form.data;
 var url = "www.myurl.com";<p class="basic"></p>// Add a custom header to the request.
 // In this case a basic authentication to access a password protected resource.
-//给请求添加一个自定义的header，在这里用一个简单的授权来访问密码保护的资源
+// 给请求添加一个自定义的 header 在这里用一个简单的授权来访问密码保护的资源。
 headers["Authorization"]="Basic " + System.Convert.ToBase64String(
 	System.Text.Encoding.ASCII.GetBytes("username:password"));<p class="basic"></p>// Post a request to an URL
-	//传递一个请求到URL
+	// 传递一个请求到URL
 var www = new <a href="WWW.html">WWW</a>(url, rawData, headers);
 yield www;
 //.. process results from <a href="WWW.html">WWW</a> request here...
-//在这里处理<a href="WWW.html">WWW</a>请求的结果
+//.. 在这里处理 <a href="WWW.html">WWW</a> 请求的结果...
 </pre>
       <pre class="codeExampleCS" style="display: none;">using UnityEngine;
 using System.Collections;
@@ -813,7 +813,8 @@ public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a> {
     public <a href="WWW.html">WWW</a> www = new <a href="WWW.html">WWW</a>(url, rawData, headers);
     IEnumerator Example() {
         form.AddField("name", "value");
-        headers["Authorization"] = "Basic " + System.Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes("username:password"));
+        headers["Authorization"] = "Basic " + System.Convert.ToBase64String(
+		System.Text.Encoding.ASCII.GetBytes("username:password"));
         yield return www;
     }
 }
@@ -835,7 +836,8 @@ public class Example(<a href="MonoBehaviour.html">MonoBehaviour</a>):
 
 	def Example() as IEnumerator:
 		form.AddField('name', 'value')
-		headers['Authorization'] = ('Basic ' + System.Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes('username:password')))
+		headers['Authorization'] = ('Basic ' + System.Convert.ToBase64String(
+			System.Text.Encoding.ASCII.GetBytes('username:password')))
 		yield www
 
 </pre>

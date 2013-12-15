@@ -777,10 +777,10 @@
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
             <p class="first">The PreferenceItem attribute allows you to add preferences sections to the Preferences Window.</p>
-			<div class="ch">PreferenceItem属性允许你添加首选项部分的首选项窗口。</div><br />
+			<div class="ch">PreferenceItem 属性允许你添加首选项部分的首选项窗口。</div><br />
           </div>
-          <div class="subsection">The PreferenceItem attribute turns any static function into an OnGUI callback. Only static functions can use the PreferenceItem attribute.<br />
-		  <div class="chs">PreferenceItem属性使任何静态函数变为OnGUI回调。只有静态函数可以使用PreferenceItem属性。</div></div>
+          <div class="subsection">The PreferenceItem attribute turns any static function into an OnGUI callback. Only static functions can use the PreferenceItem attribute.
+		  <div class="chs">PreferenceItem 属性使任何静态函数变为 OnGUI 回调。只有静态函数可以使用 PreferenceItem 属性。</div></div>
           <div class="subsection">
       <pre class="codeExampleRaw">public class OurPreferences {
 	// Have we loaded the prefs yet
@@ -792,7 +792,7 @@
 	public static var boolPreference : boolean = false;
 	
 	// Add preferences section named "My Preferences" to the Preferences Window
-	// 在首选项窗口中添加一个名为“My Preferences”的首选项部分
+	// 在首选项窗口中添加一个名为 “My Preferences” 的首选项部分
 	@PreferenceItem ("My Preferences")
 	static function PreferencesGUI () {
 		// Load the preferences
@@ -827,7 +827,7 @@ public class OurPreferences {
 	public static bool boolPreference = false;
 	
 	// Add preferences section named "My Preferences" to the Preferences Window
-	// 在首选项窗口中添加一个名为“My Preferences”的首选项部分
+	// 在首选项窗口中添加一个名为 “My Preferences” 的首选项部分
 	[PreferenceItem ("My Preferences")]
 	static void PreferencesGUI () {
 		// Load the preferences
@@ -855,7 +855,7 @@ public class OurPreferences {
     <tbody><tr>
             <th class="memberTableName"><a href="PreferenceItem-ctor.html">PreferenceItem</a></th>
             <td>Creates a section in the Preferences Window called name and invokes the static function following it for the section's GUI.<br />
-			在首选项窗口中创建了一个调用名称的部分，并且为此部分的GUI调用了与之相随的静态函数。
+			在首选项窗口中创建了一个调用名称的部分，并且为此部分的 GUI 调用了与之相随的静态函数。
 			</td>
           </tr>
   </tbody></table>

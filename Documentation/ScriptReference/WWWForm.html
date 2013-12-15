@@ -777,36 +777,36 @@
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
             <p class="first">Helper class to generate form data to post to web servers using the <a href="WWW.html">WWW</a> class.</p>
-			<div class="ch">辅助类，用来生成表单数据，使用<a href="WWW.html">WWW</a>类将数据传递到web服务器</div>
+			<div class="ch">辅助类用来生成表单数据，使用 <a href="WWW.html">WWW</a> 类将数据传递到 web 服务器。</div><br />
           </div>
           <div class="subsection">
       <pre class="codeExampleRaw">// Grab a screen shot and upload it to a CGI script.
-//获取一个截屏并上传到CGI脚本
+// 获取一个截屏并上传到 CGI 脚本。
 // The CGI script must be able to hande form uploads.
-//该CGI脚本必须能处理表单上传<p class="basic"></p>var screenShotURL= "http://www.my-server.com/cgi-bin/screenshot.pl";<p class="basic"></p>// Take a screen shot immediately
-//立即截屏
+// 该 CGI 脚本必须能处理表单上传。<p class="basic"></p>var screenShotURL= "http://www.my-server.com/cgi-bin/screenshot.pl";<p class="basic"></p>// Take a screen shot immediately
+// 立即截屏
 function Start() {
     UploadPNG();
 }<p class="basic"></p>function UploadPNG() {
     // We should only read the screen after all rendering is complete
-   //我们应该在所有渲染完成后读取屏幕
+    // 我们应该在所有渲染完成后读取屏幕
     yield <a href="WaitForEndOfFrame.html">WaitForEndOfFrame</a>();<p class="basic"></p>    // Create a texture the size of the screen, RGB24 format
-   //创建屏幕大小的纹理，RGB24格式
+    // 创建屏幕大小的纹理，RGB24 格式
     var width = <a href="Screen-width.html">Screen.width</a>;
     var height = <a href="Screen-height.html">Screen.height</a>;
     var tex = new <a href="Texture2D.html">Texture2D</a>( width, height, <a href="TextureFormat.RGB24.html">TextureFormat.RGB24</a>, false );
     // Read screen contents into the texture
-   //读取屏幕内容到纹理
+    // 读取屏幕内容到纹理
     tex.ReadPixels( <a href="Rect.html">Rect</a>(0, 0, width, height), 0, 0 );
     tex.Apply();<p class="basic"></p>    // Encode texture into PNG
-   //编码纹理为PNG
+    // 编码纹理为 PNG
     var bytes = tex.EncodeToPNG();
     Destroy( tex );<p class="basic"></p>    // Create a Web Form
-   //创建一个Web表单
+    // 创建一个 Web 表单
     var form = new <a href="WWWForm.html">WWWForm</a>();
     form.AddField("frameCount", Time.frameCount.ToString());
     form.AddBinaryData("fileUpload", bytes, "screenShot.png", "image/png");<p class="basic"></p>    // Upload to a cgi script
-   //上传到一个CGI脚本
+    // 上传一个 CGI 脚本
     var w = <a href="WWW.html">WWW</a>(screenShotURL, form);
     yield w;
     if (!String.IsNullOrEmpty(w.error))
@@ -817,20 +817,20 @@ function Start() {
 </pre>
     </div>
           <div class="subsection">Here is a sample script that retrieves the high scores stored
-in a table in an SQL database.</div>
-		  <div class="chs">这里是一个简单的脚本，检索储存在SQL数据库中的高分表</div>
+in a table in an SQL database.
+		  <div class="chs">这里是一个简单的脚本，检索储存在 SQL 数据库中的高分表。</div></div>
           <div class="subsection">
       <pre class="codeExampleRaw">// This example assumes that the user has entered his name into a
 // variable called <code class="varname">name</code> and that <code class="varname">score</code> contains the user's current
 // score.
-//这个例子假设玩家已经输入了他的名字到一个name的变量中，并且score包含玩家当前的分数<p class="basic"></p>var highscore_url = "http://www.my-site.com/highscores.pl";
+// 这个例子假设玩家已经输入了他的名字到一个 name 的变量中，并且 score 包含玩家当前的分数。<p class="basic"></p>var highscore_url = "http://www.my-site.com/highscores.pl";
 var playName = "Player 1";
 var score = -1;<p class="basic"></p>function Start() {
 	// Create a form object for sending high score data to the server
 	// 创建一个表单对象，将高分数据传输到服务器
 	var form = new <a href="WWWForm.html">WWWForm</a>();
 	// Assuming the perl script manages high scores for different games
-	// 将设perl脚本为不同的游戏管理高分
+	// 将设 perl 脚本为不同的游戏管理高分
 	form.AddField( "game", "MyGameName" );
 	 // The name of the player submitting the scores
 	 //玩家提交分数的名称
@@ -853,11 +853,13 @@ var score = -1;<p class="basic"></p>function Start() {
 </pre>
     </div>
           <div class="subsection">Here is a sample Perl script that processes the high scores stored
-in a table in an SQL database.</div>
+in a table in an SQL database.<div class="chs">这里是一个简单的 Perl 脚本用处理储存在 SQL 数据库中的高分表。</div></div>
           <div class="subsection">
       <pre class="codeExampleRaw">#!<code class="varname">usr</code>bin/perl
 # The SQL database needs to have a table called highscores
+# SQL 数据库需要有一个名为高分表
 # that looks something like this:
+# 看起来像这样：
 #
 #   CREATE TABLE highscores (
 #     game varchar(255) NOT NULL,
@@ -868,16 +870,21 @@ in a table in an SQL database.</div>
 use strict;
 use CGI;
 use DBI;<p class="basic"></p># Read form data etc.
+# 读取表单数据等。
 my $cgi = new CGI;<p class="basic"></p># The results from the high score script will be in plain text
+# 从高分脚本中得到的结果将会在纯文本中
 print $cgi-&gt;header("text/plain");<p class="basic"></p>my $game = $cgi-&gt;param('game');
 my $playerName = $cgi-&gt;param('playerName');
-my $score = $cgi-&gt;param('score');<p class="basic"></p>exit 0 unless $game; # This parameter is required<p class="basic"></p># Connect to a database
+my $score = $cgi-&gt;param('score');<p class="basic"></p>exit 0 unless $game; # This parameter is required 此参数是必需的<p class="basic"></p># Connect to a database
+# 连接到数据库
 my $dbh = DBI-&gt;connect( 'DBI:mysql:databasename', 'username', 'password' )
 	|| die "Could not connect to database: $DBI::errstr";<p class="basic"></p># Insert the player score if there are any
+# 如果有的话，插入玩家的得分
 if( $playerName &amp;&amp; $score) {
 	$dbh-&gt;do( "insert into highscores (game, player, score) values(?,?,?)",
 		undef, $game, $playerName, $score );
 }<p class="basic"></p># Fetch the high scores
+# 获取最高分
 my $sth = $dbh-&gt;prepare(
 	'SELECT player, score FROM highscores WHERE game=? ORDER BY score desc LIMIT 10' );
 $sth-&gt;execute($game);
@@ -891,29 +898,29 @@ while (my $r = $sth-&gt;fetchrow_arrayref) {
         <table class="class-member-list">
     <tbody><tr>
             <th class="memberTableName"><a href="WWWForm-data.html">data</a></th>
-            <td>(Read Only) The raw data to pass as the POST request body when sending the form.</br>(只读)在发送表单时，原始数据通过post请求body</td>
+            <td>(Read Only) The raw data to pass as the POST request body when sending the form.</br>(只读)在发送表单时，原始数据通过 POST 请求 body。</td>
           </tr>
     <tr>
             <th class="memberTableName"><a href="WWWForm-headers.html">headers</a></th>
-            <td>(Read Only) Returns the correct request headers for posting the form using the WWW class.</br>(只读)为使用WWW类传递的表单返回一个正确的请求头</td>
+            <td>(Read Only) Returns the correct request headers for posting the form using the WWW class.</br>(只读)为使用 WWW 类传递的表单返回一个正确的请求头。</td>
           </tr>
   </tbody></table>
         <div class="script-section-softheading">Constructors 构造函数</div>
         <table class="class-member-list">
     <tbody><tr>
             <th class="memberTableName"><a href="WWWForm-ctor.html">WWWForm</a></th>
-            <td>Creates an empty WWWForm object.</br>创建一个空的网页表单(WWWForm)对象</td>
+            <td>Creates an empty WWWForm object.</br>创建一个空的 WWWForm(网页表单) 对象。</td>
           </tr>
   </tbody></table>
         <div class="script-section-softheading">Functions 函数</div>
         <table class="class-member-list">
     <tbody><tr>
             <th class="memberTableName"><a href="WWWForm.AddBinaryData.html">AddBinaryData</a></th>
-            <td>Add binary data to the form.<br/>添加二进制数据到表单</td>
+            <td>Add binary data to the form.<br/>添加二进制数据到表单。</td>
           </tr>
     <tr>
             <th class="memberTableName"><a href="WWWForm.AddField.html">AddField</a></th>
-            <td>Add a simple field to the form.<br/>添加一个简单的域到表单</td>
+            <td>Add a simple field to the form.<br/>添加一个简单的域到表单。</td>
           </tr>
   </tbody></table>
       </div>

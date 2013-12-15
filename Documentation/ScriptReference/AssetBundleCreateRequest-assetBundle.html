@@ -8,7 +8,7 @@
 	<link rel="shortcut icon" href="../Images/favicon.ico" />
 	<link rel="icon" type="image/png" href="../Images/favicon.png" />
 	<!-- #TemplateBeginEditable name="doctitle" -->
-	<title>AccelerationEvent.acceleration 加速度</title>
+	<title>AssetBundleCreateRequest.assetBundle 资源包</title>
 	<!-- #TemplateEndEditable -->
     <link rel="stylesheet" href="../Images/CSS/code.css" type="text/css">
     <link rel="stylesheet" href="../Images/CSS/unity.css" type="text/css">
@@ -766,23 +766,25 @@
           <li class="attrEditor" style="display: none;"><a href="PreferenceItem.html">PreferenceItem</a></li>
         </ul>
       </div>
-<div id="mainContainer"><span class="heading"><a href="AccelerationEvent.html">AccelerationEvent</a>.acceleration 加速度</span><br><div class="section">
+<div id="mainContainer"><span class="heading"><a href="AssetBundleCreateRequest.html">AssetBundleCreateRequest</a>.assetBundle 资源包</span><br><div class="section">
           <div class="subsection">
             <div class="sigContainer">
               <div class="sigBlockJS" style="display: none;"><span class="decText">
-var <span class="sigKW">acceleration</span>: <a href="Vector3.html">Vector3</a>;
+var <span class="sigKW">assetBundle</span>: <a href="AssetBundle.html">AssetBundle</a>;
 </span></div>
-              <div class="sigBlockCS" style="display: block;"><span class="decText"><a href="Vector3.html">Vector3</a> <span class="sigKW">acceleration</span>;
+              <div class="sigBlockCS" style="display: block;"><span class="decText"><a href="AssetBundle.html">AssetBundle</a> <span class="sigKW">assetBundle</span>;
 </span></div>
-              <div class="sigBlockBoo" style="display: none;"><span class="decText"> <span class="sigKW">acceleration</span> as <a href="Vector3.html">Vector3</a></span></div>
+              <div class="sigBlockBoo" style="display: none;"><span class="decText"> <span class="sigKW">assetBundle</span> as <a href="AssetBundle.html">AssetBundle</a></span></div>
             </div>
           </div>
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
-            <p class="first">Value of acceleration.</p><div class="ch">加速度的值。</div><br />
+            <p class="first">Asset object being loaded (Read Only).</p>
+			<div class="ch">正在加载的资源物体(只读)。</div><br />
           </div>
+          <div class="subsection">Note that accessing asset before <a href="AsyncOperation-isDone.html">isDone</a> is true will stall the loading process.
+		  <div class="chs">注意，访问资源物体前 <a href="AsyncOperation-isDone.html">isDone</a> 为 true 将停止加载进度。</div></div>
         </div>
       </div>
-    </div>
   </body>
 </html>

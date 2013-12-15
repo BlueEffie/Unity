@@ -780,29 +780,28 @@ var <span class="sigKW">data</span>: byte[];
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
             <p class="first">(Read Only) The raw data to pass as the POST request body when sending the form.</p>
-			<div class="ch">(只读)发送表单时，原始数据作为POST请求body发送</div></br>
+			<div class="ch">(只读)在发送表单时，原始数据通过 POST 请求 body。</div></br>
           </div>
           <div class="subsection">Usually, you just pass the WWWForm object directly to the <a href="WWW.html">WWW</a> constructor, but you will
 need this variable if you want to change the request headers sent to the web server.
-		  <div class="chs">通常，你只需要将WWWForm对象传递给<a href="WWW.html">WWW</a>构造函数，但是如果想改变发送到web服务器的请求headers，将需要这个变量</div>
-<p class="basic"></p>See Also: <a href="WWWForm-headers.html">headers</a> variable.</div>
-		  <div class="chs">请参见:<a href="WWWForm-headers.html">headers</a>变量</div>
+		  <div class="chs">通常，你只需要将 WWWForm 对象传递给 <a href="WWW.html">WWW</a> 构造函数，但是如果想改变发送到 web 服务器的请求 headers，将需要这个变量。</div>
+<p class="basic"></p>See Also: <a href="WWWForm-headers.html">headers</a> variable.<br />请参见：<a href="WWWForm-headers.html">headers</a> 变量。</div>
           <div class="subsection">
       <pre class="codeExampleJS" style="display: block;">var form = new <a href="WWWForm.html">WWWForm</a>();
 form.AddField( "name", "value" );
 var headers = form.headers;
 var rawData = form.data;
 var url = "www.myurl.com";<p class="basic"></p>// Add a custom header to the request.
-//给请求添加一个自定义的header
+// 给请求添加一个自定义的 header。
 // In this case a basic authentication to access a password protected resource.
-//在这里，用一个简单的授权来访问密码保护的资源
+// 在这里，用一个简单的授权来访问密码保护的资源。
 headers["Authorization"]="Basic " + System.Convert.ToBase64String(
 	System.Text.Encoding.ASCII.GetBytes("username:password"));<p class="basic"></p>// Post a request to an URL with our custom headers
-//用自定义的header传递一个请求到URL
+// 用自定义的header传递一个请求到URL
 var www = new <a href="WWW.html">WWW</a>(url, rawData, headers);
 yield www;
 //.. process results from <a href="WWW.html">WWW</a> request here...
-// 这里处理<a href="WWW.html">WWW</a>的请求结果…
+//.. 这里处理 <a href="WWW.html">WWW</a> 的请求结果...
 </pre>
       <pre class="codeExampleCS" style="display: none;">using UnityEngine;
 using System.Collections;
@@ -815,7 +814,8 @@ public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a> {
     public <a href="WWW.html">WWW</a> www = new <a href="WWW.html">WWW</a>(url, rawData, headers);
     IEnumerator Example() {
         form.AddField("name", "value");
-        headers["Authorization"] = "Basic " + System.Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes("username:password"));
+        headers["Authorization"] = "Basic " + System.Convert.ToBase64String(
+		System.Text.Encoding.ASCII.GetBytes("username:password"));
         yield return www;
     }
 }
@@ -837,7 +837,8 @@ public class Example(<a href="MonoBehaviour.html">MonoBehaviour</a>):
 
 	def Example() as IEnumerator:
 		form.AddField('name', 'value')
-		headers['Authorization'] = ('Basic ' + System.Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes('username:password')))
+		headers['Authorization'] = ('Basic ' + System.Convert.ToBase64String(
+			System.Text.Encoding.ASCII.GetBytes('username:password')))
 		yield www
 
 </pre>

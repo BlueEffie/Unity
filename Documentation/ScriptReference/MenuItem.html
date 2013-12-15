@@ -777,19 +777,19 @@
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
             <p class="first">The MenuItem attribute allows you to add menu items to the main menu and inspector context menus.</p>
-			<div class="ch">MenuItem属性允许你添加菜单项到主菜单和检视面板上下文菜单。</div><br />
+			<div class="ch">MenuItem 属性允许你添加菜单项到主菜单和检视面板上下文菜单。</div><br />
           </div>
-          <div class="subsection">The MenuItem attribute turns any static function into a menu command. Only static functions can use the MenuItem attribute.<br /><div class="chs">MenuItem属性把任意静态函数变成为一个菜单命令。仅静态函数能使用这个MenuItem属性。</div>
+          <div class="subsection">The MenuItem attribute turns any static function into a menu command. Only static functions can use the MenuItem attribute.<div class="chs">MenuItem 属性把任意静态函数变成为一个菜单命令。仅静态函数能使用这个 MenuItem 属性。</div>
 		  <p class="basic"></p>To create a hotkey you can use the following special characters: <strong>%</strong> (ctrl on Windows, cmd on OS X), <strong>#</strong> (shift), <strong>&amp;</strong> (alt), <strong>_</strong>(no key modifiers). For example to create a menu with hotkey shift-alt-g use <code class="tt">"MyMenu/Do Something #&amp;g"</code>. To create a menu with hotkey <strong>g</strong> and no key modifiers pressed use <code class="tt">"MyMenu/Do Something _g"</code>.<br />
-		  <div class="chs">可以使用以下特殊的字符创建热键：<strong>%</strong> (Windows上为ctrl，OS X上为cmd)，<strong>#</strong> (shift)，<strong>&amp;</strong> (alt)，<strong>_</strong>(非修饰键)。例如使用<code class="tt">"MyMenu/Do Something #&amp;g"</code>创建一个菜单热键为shift-alt-g。使用<code class="tt">"MyMenu/Do Something _g"</code>创建一个菜单热键<strong>g</strong>并按下非修饰键。</div>		  
+		  <div class="chs">可以使用以下特殊的字符创建热键：<strong>%</strong> (Windows 上为 ctrl，OS X 上为 cmd)，<strong>#</strong> (shift)，<strong>&amp;</strong> (alt)，<strong>_</strong>(非修饰键)。例如使用 <code class="tt">"MyMenu/Do Something #&amp;g"</code> 创建一个菜单热键为 shift-alt-g。使用 <code class="tt">"MyMenu/Do Something _g"</code> 创建一个菜单热键 <strong>g</strong> 并按下非修饰键。</div>		  
 		  <p class="basic"></p>Some special keyboard keys are supported as hotkeys, for example "#LEFT" would map to shift-left. The keys supported like this are: LEFT, RIGHT, UP, DOWN, F1 .. F12, HOME, END, PGUP, PGDN.
-		  <br /><div class="chs">热键会支持一些特殊的键盘按键，例如"#LEFT"将会映射到左shift键。支持这样的按键还有：LEFT，RIGHT，UP，DOWN，F1 .. F12，HOME，END，PGUP，PGDN。</div>
+		  <div class="chs">热键会支持一些特殊的键盘按键，例如 "#LEFT" 将会映射到左 shift 键。支持这样的按键还有：LEFT，RIGHT，UP，DOWN，F1 .. F12，HOME，END，PGUP，PGDN。</div>
 		  <p class="basic"></p>A hotkey text must be preceded with a space character (<code class="tt">"MyMenu/Do_g"</code> won't be interpreted as hotkey, while <code class="tt">"MyMenu/Do _g"</code> will).
-		  <br /><div class="chs">必须在热键文本前面加上一个空格字符（<code class="tt">"MyMenu/Do_g"</code>不会被视为热键，而<code class="tt">"MyMenu/Do _g"</code>会）。</div>
+		  <div class="chs">必须在热键文本前面加上一个空格字符（<code class="tt">"MyMenu/Do_g"</code> 不会被视为热键，而 <code class="tt">"MyMenu/Do _g"</code> 会）。</div>
 		  </div>
           <div class="subsection">
       <pre class="codeExampleRaw">// JavaScript example:<p class="basic"></p>// Add a menu item named "Do Something" to MyMenu in the menu bar.
-// 在菜单栏中添加一个名为“Do Something”的菜单项到我的菜单。
+// 在菜单栏中添加一个名为 “Do Something” 的菜单项到我的菜单。
 @MenuItem ("MyMenu/Do Something")
 static function DoSomething () {
 	<a href="Debug.Log.html">Debug.Log</a> ("Doing Something...");
@@ -797,7 +797,7 @@ static function DoSomething () {
 // Validated menu item.
 // 验证菜单项。
 // Add a menu item named "Log Selected <a href="Transform.html">Transform</a> Name" to MyMenu in the menu bar.
-// 在菜单栏中添加一个名为“Log Selected <a href="Transform.html">Transform</a> Name”的菜单项到我的菜单。
+// 在菜单栏中添加一个名为 “Log Selected <a href="Transform.html">Transform</a> Name” 的菜单项到我的菜单。
 // We use a second function to validate the menu item
 // 我们使用第二个函数来验证菜单项
 // so it will only be enabled if we have a transform selected.
@@ -808,23 +808,23 @@ static function LogSelectedTransformName () {
 }<p class="basic"></p>// Validate the menu item defined by the function above.
 // 验证上面函数所定义的菜单项。
 // The menu item will be disabled if this function returns false.
-// 如果这个函数返回false那么菜单项将被禁用。
+// 如果这个函数返回 false 那么菜单项将被禁用。
 @MenuItem ("MyMenu/Log Selected <a href="Transform.html">Transform</a> Name", true)
 static function ValidateLogSelectedTransformName () {
 	// Return false if no transform is selected.
-	// 如果没有选择变换则返回false。
+	// 如果没有选择变换则返回 false。
 	return <a href="Selection-activeTransform.html">Selection.activeTransform</a> != null;
 }<p class="basic"></p>
 // Add a menu item named "Do Something with a Shortcut Key" to MyMenu in the menu bar
-// 在菜单栏中添加一个名为“Do Something with a Shortcut Key”的菜单项到我的菜单
+// 在菜单栏中添加一个名为 “Do Something with a Shortcut Key” 的菜单项到我的菜单
 // and give it a shortcut (ctrl-g on Windows, cmd-g on OS X).
-// 并且指定快捷键（windows为ctrl-g，OS X为cmd-g）。
+// 并且指定快捷键（windows 为 ctrl-g，OS X 为 cmd-g）。
 @MenuItem ("MyMenu/Do Something with a Shortcut Key %g")
 static function DoSomethingWithAShortcutKey () {
 	<a href="Debug.Log.html">Debug.Log</a> ("Doing something with a Shortcut Key...");
 }<p class="basic"></p>
 // Add a menu item called "Double Mass" to a Rigidbody's context menu.
-// 在刚体的上下文菜单中添加一个名为“Double Mass”的菜单项。
+// 在刚体的上下文菜单中添加一个名为 “Double Mass” 的菜单项。
 @MenuItem ("CONTEXT<code class="varname">Rigidbody</code>Double Mass")
 static function DoubleMassFromContext (command : <a href="MenuCommand.html">MenuCommand</a>) {
 	var body : <a href="Rigidbody.html">Rigidbody</a> = command.context;
@@ -838,7 +838,7 @@ static function DoubleMassFromContext (command : <a href="MenuCommand.html">Menu
 using UnityEditor;
 using UnityEngine;
 public class MenuTest : <a href="MonoBehaviour.html">MonoBehaviour</a> {<p class="basic"></p>	// Add a menu item named "Do Something" to MyMenu in the menu bar.
-	// 在菜单栏中添加一个名为“Do Something”的菜单项到我的菜单。
+	// 在菜单栏中添加一个名为 “Do Something” 的菜单项到我的菜单。
 	[<a href="MenuItem.html">MenuItem</a> ("MyMenu/Do Something")]
 	static void DoSomething () {
 		<a href="Debug.Log.html">Debug.Log</a> ("Doing Something...");
@@ -846,7 +846,7 @@ public class MenuTest : <a href="MonoBehaviour.html">MonoBehaviour</a> {<p class
 	// Validated menu item.
 	// 验证菜单项。
 	// Add a menu item named "Log Selected <a href="Transform.html">Transform</a> Name" to MyMenu in the menu bar.
-	// 在菜单栏中添加一个名为“Log Selected <a href="Transform.html">Transform</a> Name”的菜单项到我的菜单。
+	// 在菜单栏中添加一个名为 “Log Selected <a href="Transform.html">Transform</a> Name” 的菜单项到我的菜单。
 	// We use a second function to validate the menu item
 	// 我们使用第二个函数来验证菜单项
 	// so it will only be enabled if we have a transform selected.
@@ -858,22 +858,22 @@ public class MenuTest : <a href="MonoBehaviour.html">MonoBehaviour</a> {<p class
 	}<p class="basic"></p>	// Validate the menu item defined by the function above.
 	// 验证上面函数所定义的菜单项。
 	// The menu item will be disabled if this function returns false.
-	// 如果这个函数返回false那么菜单项将被禁用。
+	// 如果这个函数返回 false 那么菜单项将被禁用。
 	[<a href="MenuItem.html">MenuItem</a> ("MyMenu/Log Selected <a href="Transform.html">Transform</a> Name", true)]
 	static bool ValidateLogSelectedTransformName () {
 		// Return false if no transform is selected.
-		// 如果没有选择变换则返回false。
+		// 如果没有选择变换则返回 false。
 		return <a href="Selection-activeTransform.html">Selection.activeTransform</a> != null;
 	}<p class="basic"></p>
 	// Add a menu item named "Do Something with a Shortcut Key" to MyMenu in the menu bar
-	// 在菜单栏中添加一个名为“Do Something with a Shortcut Key”的菜单项到我的菜单
+	// 在菜单栏中添加一个名为 “Do Something with a Shortcut Key” 的菜单项到我的菜单
 	// and give it a shortcut (ctrl-g on Windows, cmd-g on OS X).
-	// 并且指定快捷键（windows为ctrl-g，OS X为cmd-g）。
+	// 并且指定快捷键（windows 为 ctrl-g，OS X 为 cmd-g）。
 	[<a href="MenuItem.html">MenuItem</a> ("MyMenu/Do Something with a Shortcut Key %g")]
 	static void DoSomethingWithAShortcutKey () {
 		<a href="Debug.Log.html">Debug.Log</a> ("Doing something with a Shortcut Key...");
 	}<p class="basic"></p>	// Add a menu item called "Double Mass" to a Rigidbody's context menu.
-	// 在刚体的上下文菜单中添加一个名为“Double Mass”的菜单项。
+	// 在刚体的上下文菜单中添加一个名为 “Double Mass” 的菜单项。
 	[<a href="MenuItem.html">MenuItem</a> ("CONTEXT<code class="varname">Rigidbody</code>Double Mass")]
 	static void DoubleMass (<a href="MenuCommand.html">MenuCommand</a> command) {
 		<a href="Rigidbody.html">Rigidbody</a> body = (<a href="Rigidbody.html">Rigidbody</a>)command.context;

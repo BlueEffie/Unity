@@ -777,10 +777,10 @@
           <div class="subsection">
             <div class="script-section-softheading">Description 描述</div>
             <p class="first">Waits until the end of the frame after all cameras and GUI is rendered, just before displaying the frame on screen.</p>
-			<div class="ch">等到所有的摄像机和GUI被渲染完成之后，在该帧显示在屏幕之前.</div><br/>
+			<div class="ch">等到所有摄像机的帧结束之后和只在屏幕上显示该帧之前渲染 GUI。</div><br/>
           </div>
-          <div class="subsection">You can use it to read the display into a texture, encode it as an image file (see Texture2D.ReadPixels and Texture2D.EncodeToPNG) and send it somewhere.</div>
-		  <div class="chs">你可以使用它读取显示成一个纹理，将它编码为一个图片文件 (参见 Texture2D.ReadPixels and Texture2D.EncodeToPNG)并且发送到任意地方</div>
+          <div class="subsection">You can use it to read the display into a texture, encode it as an image file (see Texture2D.ReadPixels and Texture2D.EncodeToPNG) and send it somewhere.
+		  <div class="chs">你可以使用它读取显示成一个纹理，将它编码为一个图片文件(参见 Texture2D.ReadPixels 和 Texture2D.EncodeToPNG)并且发送到任意地方。</div></div>
 		  
           <div class="subsection">
       <pre class="codeExampleJS" style="display: block; ">yield new <a href="WaitForEndOfFrame.html">WaitForEndOfFrame</a> ();
@@ -807,34 +807,34 @@ public class Example(<a href="MonoBehaviour.html">MonoBehaviour</a>):
           <div class="subsection">Another example:</div>
           <div class="subsection">
       <pre class="codeExampleJS" style="display: block; ">// Saves screenshot as PNG file. 
-//将快照保存为PNG文件
+// 将快照保存为PNG文件。
 import System.IO;<p class="basic"></p>// Take a shot immediately
-//立即截屏
+// 立即截屏
 function Start() {
 	UploadPNG();
 }<p class="basic"></p>function UploadPNG() {
 	// We should only read the screen buffer after rendering is complete
-	//在渲染完成之后应只读取屏幕缓存
+	// 在渲染完成之后应只读取屏幕缓存
 	yield <a href="WaitForEndOfFrame.html">WaitForEndOfFrame</a>();<p class="basic"></p>	// Create a texture the size of the screen, RGB24 format
-	//创建一个屏幕大小的图片，GGB24的格式
+	// 创建一个屏幕大小的图片，GGB24的格式
 	var width = <a href="Screen-width.html">Screen.width</a>;
 	var height = <a href="Screen-height.html">Screen.height</a>;
 	var tex = new <a href="Texture2D.html">Texture2D</a>( width, height, <a href="TextureFormat.RGB24.html">TextureFormat.RGB24</a>, false );
 	// Read screen contents into the texture
-	//将屏幕内容读取到图片中
+	// 将屏幕内容读取到图片中
 	tex.ReadPixels( <a href="Rect.html">Rect</a>(0, 0, width, height), 0, 0 );
 	tex.Apply();<p class="basic"></p>	// Encode texture into PNG
-	//将图片编码为PNG格式
+	// 将图片编码为PNG格式
 	var bytes = tex.EncodeToPNG();
 	Destroy( tex );<p class="basic"></p>	// For testing purposes, also write to a file in the project folder
-	//处于测试目的，也在工程文件夹保存一个文件
+	// 处于测试目的，也在工程文件夹保存一个文件
 	// File.WriteAllBytes(<a href="Application-dataPath.html">Application.dataPath</a> + "/../SavedScreen.png", bytes);<p class="basic"></p>
 	// Create a Web Form
-	//创建一个Web表单
+	// 创建一个Web表单
 	var form = new <a href="WWWForm.html">WWWForm</a>();
 	form.AddField("frameCount", Time.frameCount.ToString());
 	form.AddBinaryData("fileUpload",bytes);<p class="basic"></p>	// Upload to a cgi script
-	//上传到一个CGI脚本
+	// 上传一个CGI脚本
 	var w = <a href="WWW.html">WWW</a>("http:/<code class="varname">localhost</code>cgi-bin/env.cgi?post", form);
 	yield w;
 	if (w.error != null)
@@ -903,9 +903,9 @@ public class Example(<a href="MonoBehaviour.html">MonoBehaviour</a>):
 </pre>
     </div>
           <div class="subsection">
-      <pre class="codeExampleJS" style="display: block; ">// Shows alpha channel contents in the game view.  </br>//在游戏视图中显示alpha通道的内容<p class="basic"></p>private var mat : <a href="Material.html">Material</a>;<p class="basic"></p>// After the frame is completely rendered, we'll
+      <pre class="codeExampleJS" style="display: block; ">// Shows alpha channel contents in the game view.  </br>// 在游戏视图中显示alpha通道的内容。<p class="basic"></p>private var mat : <a href="Material.html">Material</a>;<p class="basic"></p>// After the frame is completely rendered, we'll
 // draw a full screen quad that extracts the alpha channel.
-//在该帧完全渲染后，我们将绘制一个提取了alpha通道的全屏矩形
+// 在该帧完全渲染后，我们将绘制一个提取了alpha通道的全屏矩形。
 function Start() {
 	while (true) {
 		yield <a href="WaitForEndOfFrame.html">WaitForEndOfFrame</a>();<p class="basic"></p>		if( !mat ) {
@@ -943,9 +943,17 @@ public class Example : <a href="MonoBehaviour.html">MonoBehaviour</a> {
     IEnumerator Start() {
         while (true) {
             yield return new <a href="WaitForEndOfFrame.html">WaitForEndOfFrame</a>();
-            if (!mat)
-                mat = new <a href="Material.html">Material</a>("Shader \"Hidden/Alpha\" {" + "SubShader {" + "    Pass {" + "        ZTest Always Cull Off ZWrite Off" + "        Blend DstAlpha Zero" + "        <a href="Color.html">Color</a> (1,1,1,1)" + "    }" + "}" + "}");
-            
+            if (!mat){
+                mat = new <a href="Material.html">Material</a>("Shader \"Hidden/Alpha\" {" + 
+				"SubShader {" +
+				"    Pass {" +
+				"        ZTest Always Cull Off ZWrite Off" +
+				"        Blend DstAlpha Zero" +
+				"        <a href="Color.html">Color</a> (1,1,1,1)" +
+				"    }" +
+				"}" +
+				"}");
+            }
             <a href="GL.PushMatrix.html">GL.PushMatrix</a>();
             <a href="GL.LoadOrtho.html">GL.LoadOrtho</a>();
             int i = 0;
@@ -975,7 +983,15 @@ public class Example(<a href="MonoBehaviour.html">MonoBehaviour</a>):
 		while true:
 			yield <a href="WaitForEndOfFrame.html">WaitForEndOfFrame</a>()
 			if not mat:
-				mat = <a href="Material.html">Material</a>((((((((('Shader "Hidden/Alpha" {' + 'SubShader {') + '    Pass {') + '        ZTest Always Cull Off ZWrite Off') + '        Blend DstAlpha Zero') + '        <a href="Color.html">Color</a> (1,1,1,1)') + '    }') + '}') + '}'))
+				mat = <a href="Material.html">Material</a>((((((((('Shader "Hidden/Alpha" {' +
+				'SubShader {') +
+				'    Pass {') +
+				'        ZTest Always Cull Off ZWrite Off') +
+				'        Blend DstAlpha Zero') +
+				'        <a href="Color.html">Color</a> (1,1,1,1)') +
+				'    }') +
+				'}') +
+				'}'))
 			<a href="GL.PushMatrix.html">GL.PushMatrix</a>()
 			<a href="GL.LoadOrtho.html">GL.LoadOrtho</a>()
 			i as int = 0
